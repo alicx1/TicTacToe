@@ -1,0 +1,26 @@
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: 80px;
+  font-family: Helvetica;
+  text-align: center;
+  vertical-align: center;
+}
+.text-primary {
+  color: #007bff !important;
+}
+.text-secondary {
+  color: #545b62 !important;
+}
+.text-win {
+  color: #28a745 !important;
+}
+.text-lose {
+  color: #dc3545 !important;
+}

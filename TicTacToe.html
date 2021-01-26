@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<title>Tic Tac Toe</title>
+			<script src="TicTacToe.js"></script>
+			<link rel="stylesheet" href="TicTacToe.css">
+			</head>
+			<center>
+			<body onload="init();">
+				<button onclick="init();">New Game</button>
+				<button id="undo" onclick="undo();">Undo</button>
+				<button id="redo" onclick="redo();">Redo</button>
+				<br>
+					<br>
+						<table>
+							<tr>
+								<td id="0" onclick="clic(0);"></td>
+								<td id="1" onclick="clic(1);"></td>
+								<td id="2" onclick="clic(2);"></td>
+							</tr>
+							<tr>
+								<td id="3" onclick="clic(3);"></td>
+								<td id="4" onclick="clic(4);"></td>
+								<td id="5" onclick="clic(5);"></td>
+							</tr>
+							<tr>
+								<td id="6" onclick="clic(6);"></td>
+								<td id="7" onclick="clic(7);"></td>
+								<td id="8" onclick="clic(8);"></td>
+							</tr>
+						</table>
+						<div>
+							<input type="checkbox" id="play_BOT" onclick="switchBot();">
+							<label for="play_BOT">Play against 200iq BOT</label>
+						  </div>
+						<h2><strong class="text-primary">Score:</strong>
+							<br>
+							<img src="playerX.svg" alt="X_icon" width="20" height="20" /> = <span class="text-secondary" id="x_score"></span>  
+							<br>
+							<img src="playerO.svg" alt="O_icon" width="20" height="20" /> = <span class="text-secondary" id="o_score"></span>
+						</h2>
+					</body>
+				</center>
+				</html>
