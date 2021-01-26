@@ -4,6 +4,7 @@ var occupees; // nombre de cases occupées
 var coups; // position des coups joués 
 var nWinX = 0; //Stocker le nombre de victoires de X
 var nWinO = 0; //Stocker le nombre de victoire de O
+var nDraw = 0;
 var botOn = false; //"true" quand on joue contre le bot
 
 var autreJoueur = function(joueur) {
@@ -80,13 +81,19 @@ var clic = function(id) {
     var gagnant = victoire();
     if (gagnant != 0) {
       updateWinner(gagnant);
-      alert(nomJoueur(gagnant) + " is the winner!");
-      init();
+      setTimeout(()=>{
+        alert(nomJoueur(gagnant) + " is the winner!");
+        init();
+      }, 10)
+   
     } else {
       tour = autreJoueur(tour);
       if (++occupees == 9) {
-        alert("match tie!");
-        init();
+        nDraw++;
+        setTimeout(()=>{
+          alert("match tie!");
+          init();
+        }, 10)
       } else if (tour == 2 && botOn) {
         clic(meilleurCoup());
       }
@@ -106,6 +113,8 @@ var init = function() {
   document.getElementById("redo").style.visibility = "hidden";
   document.getElementById("x_score").innerHTML = nWinX;
   document.getElementById("o_score").innerHTML = nWinO;
+  document.getElementById("draw_score").innerHTML = nDraw;
+  
 };
 var undo = function() {
   if (occupees > 0) {
